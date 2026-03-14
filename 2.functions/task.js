@@ -1,24 +1,21 @@
+"use strict";
+
 function getArrayParams(...arr) {
+  let min = Infinity;
+  let max = -Infinity;
+  let sum = 0;
 
-  return { min: min, max: max, avg: avg };
-}
+  for (let num of arr) {
+    if (num < min) {
+      min = num;
+    }
+    if (num > max) {
+      max = num;
+    }
+    sum += num;
+  }
 
-function summElementsWorker(...arr) {
+  const avg = Number((sum / arr.length).toFixed(2));
 
-}
-
-function differenceMaxMinWorker(...arr) {
-
-}
-
-function differenceEvenOddWorker(...arr) {
-
-}
-
-function averageEvenElementsWorker(...arr) {
-
-}
-
-function makeWork (arrOfArr, func) {
-
+  return { min, max, avg };
 }
